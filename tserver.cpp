@@ -11,7 +11,7 @@ int main()
 	
 	/// The next commands, addText ...show may be repeated many times asyncronously.
 	/// Add texts to the translation queue
-	tr.addText("HELLO", "Hello, world!", "Hellow, world!");
+	tr.addText("HELLO", "Hello, world!", "Hello, world!");
 	tr.addText("HOWAREYOU", "How are you?", "How are you?");
 	/// Show the translation dialog
 	tr.show("Andrew", "andrewshpagin@gmail.com", "Japanese", "ja");
