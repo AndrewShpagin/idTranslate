@@ -11,6 +11,7 @@ The easy-to-use, dependency-free utility to translate/edit text used in your c++
 4. User (or stuff member) press some hotkey over UI item. You get (from your internal structures) the ID, EnglishText, LocalizedText.
 5. Now you are using this framework to open the page in the default browser. The page looks like:
 ![Alt text](public/screenshot.png)
+**What is most important, the form opens in browser, so online grammar checkers like Grammarly are accessible, so your texts will always be good and clean with this system.**
 6. User modifies texts, presses **submit**. 
 7. You getting the modified text items.
 
