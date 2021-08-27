@@ -1,5 +1,5 @@
 # idTranslate
-The easy-to-use, dependency-free utility to translate/edit text used in your c++ application. Uses JccUI.
+The easy-to-use, dependency-free utility to translate/edit text used in your c++ application. Uses **[JccUI](https://github.com/AndrewShpagin/jccui)**.
 
 ## The problem it solves:
 1. You have application, written using c++. It has text lines. Each text in program has own identifier.
@@ -24,7 +24,7 @@ int main()
 	///  First, create the translation server, you need to do it once.
 	translate::tServer tr("public/edittext.html", 5678);
 	/// Setup the translation callback. Pay attention, it may be called in the separate thread, 
-  /// so be careful with the multithreading issues.
+	/// so be careful with the multithreading issues.
 	tr.onTranslate([](const json::JSON& res) {
 		std::cout << "Got translation:\n" << res.dump();
 	});
