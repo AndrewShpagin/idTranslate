@@ -272,28 +272,21 @@ namespace jcc {
 
 	inline void FileSystem::read(const char* filename, std::string& to) {
 		std::string fp = _server() + filename;
-		FILE* F = nullptr;
-		fopen_s(&F, fp.c_str(), "rb");
-		if (F) {
-			fseek(F, 0, SEEK_END);
-			size_t p = ftell(F);
-			fseek(F, 0, SEEK_SET);
-			char* cc = new char[p + 1];
-			cc[p] = 0;
-			fread(cc, 1, p, F);
-			fclose(F);
-			to = cc;
-			delete[]cc;
+		std::ifstream  fs(fp, std::fstream::in | std::fstream::binary);
+		if (fs.is_open()) {
+			std::stringstream buffer;
+			buffer << fs.rdbuf();
+			to = buffer.str();
+			fs.close();
 		}
 	}
 
 	inline void FileSystem::write(const char* filename, std::string& from) {
 		std::string fp = _server() + filename;
-		FILE* F = nullptr;
-		fopen_s(&F, fp.c_str(), "wb");
-		if (F) {
-			fwrite(from.c_str(), 1, from.length(), F);
-			fclose(F);
+		std::fstream fs(fp, std::fstream::out | std::fstream::binary);
+		if(fs.is_open()){
+			fs << from;
+			fs.close();
 		}
 	}
 
