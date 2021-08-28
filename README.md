@@ -1,7 +1,7 @@
 # idTranslate
 ![CMake](https://github.com/AndrewShpagin/idTranslate/actions/workflows/cmake.yml/badge.svg)
 
-The easy-to-use, dependency-free utility to translate/edit text used in your c++ application. Uses **[JccUI](https://github.com/AndrewShpagin/jccui)**.
+The easy-to-use, dependency-free, cross-platform utility to translate/edit text used in your c++ application. Uses **[JccUI](https://github.com/AndrewShpagin/jccui)**.
 
 ## The problem it solves:
 1. You have application, written using c++. It has text lines. Each text in program has own identifier.
