@@ -1,4 +1,6 @@
 # idTranslate
+![CMake](https://github.com/AndrewShpagin/idTranslate/actions/workflows/cmake.yml/badge.svg)
+
 The easy-to-use, dependency-free utility to translate/edit text used in your c++ application. Uses **[JccUI](https://github.com/AndrewShpagin/jccui)**.
 
 ## The problem it solves:
