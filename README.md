@@ -20,7 +20,7 @@ The easy-to-use, dependency-free, cross-platform utility to translate/edit text 
 ## Implementing into your project
 This is super easy. No external dependencies. Just include the header. Pay attention, you need to include 4 headers into your project: httplib.h, json.h, jcc.h, tServer.h. There is the example of the code:
 ```cpp
-#include "tServer.h"
+#include "tserver.h"
 
 int main()
 {
