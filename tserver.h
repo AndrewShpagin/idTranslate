@@ -6,7 +6,6 @@
 namespace translate {
 	class tServer {
 		jcc::LocalServer* ls;
-		std::thread* thread;
 		std::mutex m;
 		std::string html_path;
 		std::string tranlationServer;
@@ -35,14 +34,9 @@ namespace translate {
 		html_path = path_to_edittext_html;
 		ls = new jcc::LocalServer(preferred_port);
 		tidx = 0;
-		thread = new std::thread([=] {
-			ls->listen();
-			});
-		thread->detach();
 	}
 
 	inline tServer::~tServer() {
-		delete(thread);
 		delete(ls);
 	}
 
@@ -59,7 +53,7 @@ namespace translate {
 	}
 
 	inline void tServer::show(const char* author, const char* author_email, const char* LanguageFullName, const char* LanguageShortName) {
-		jcc::Html h(html_path.c_str());
+		jcc::Html h(html_path.c_str(), *ls);
 		for (int i = 0; i < toTranslate.size(); i++) {
 			std::string s = "TextItem" + std::to_string(i);
 			toTranslate[s]["tl"] = LanguageShortName;
